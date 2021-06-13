@@ -9,7 +9,7 @@ def make_dataset(dir, split=None):
     images = []
     for flow_map in sorted(glob.glob(os.path.join(dir,'*_flow.flo'))):
         flow_map = os.path.basename(flow_map)
-        root_filename = flow_map[:-13]
+        root_filename = flow_map[:-9]
         img1 = root_filename+'_img1.tif'
         img2 = root_filename+'_img2.tif'
         if not (os.path.isfile(os.path.join(dir,img1)) and os.path.isfile(os.path.join(dir,img2))):
