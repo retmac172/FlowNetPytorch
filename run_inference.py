@@ -1,5 +1,5 @@
 import argparse
-from path import Path
+from pathlib import Path
 
 import torch
 import torch.backends.cudnn as cudnn
