@@ -5,13 +5,13 @@ from .util import split2list
 
 
 def make_dataset(dir, split=None):
-    '''Will search for triplets that go by the pattern '[name]_img1.ppm  [name]_img2.ppm    [name]_flow.flo' '''
+    '''Will search for triplets that go by the pattern '[name]_img1.tif  [name]_img2.tif    [name]_flow.flo' '''
     images = []
     for flow_map in sorted(glob.glob(os.path.join(dir,'*_flow.flo'))):
         flow_map = os.path.basename(flow_map)
         root_filename = flow_map[:-9]
-        img1 = root_filename+'_img1.ppm'
-        img2 = root_filename+'_img2.ppm'
+        img1 = root_filename+'_img1.tif'
+        img2 = root_filename+'_img2.tif'
         if not (os.path.isfile(os.path.join(dir,img1)) and os.path.isfile(os.path.join(dir,img2))):
             continue
 
