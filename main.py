@@ -188,11 +188,12 @@ def main():
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.milestones, gamma=0.5)
 
     for epoch in range(args.start_epoch, args.epochs):
-        scheduler.step()
+        
 
         # train for one epoch
         train_loss, train_EPE = train(train_loader, model, optimizer, epoch, train_writer)
         train_writer.add_scalar('mean EPE', train_EPE, epoch)
+        scheduler.step()
 
         # evaluate on validation set
 
