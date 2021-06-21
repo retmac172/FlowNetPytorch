@@ -129,10 +129,9 @@ class RandomCrop(object):
         if w == tw and h == th:
             return inputs,target
 
-        x1 = random.randint(0, w - tw-1)
-        y1 = random.randint(0, h - th-1)
-        #x1 = random.randint(0, w - tw)
-        #y1 = random.randint(0, h - th)
+
+        x1 = random.randint(0, w - tw)
+        y1 = random.randint(0, h - th)
         inputs[0] = inputs[0][y1: y1 + th,x1: x1 + tw]
         inputs[1] = inputs[1][y1: y1 + th,x1: x1 + tw]
         return inputs, target[y1: y1 + th,x1: x1 + tw]
