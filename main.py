@@ -230,10 +230,7 @@ def train(train_loader, model, optimizer, epoch, train_writer):
     model.train()
 
     end = time.time()
-    #ekliyoryum
-    print(input.size())
-    print(target.size())
-    ##
+
 
     for i, (input, target) in enumerate(train_loader):
         # measure data loading time
