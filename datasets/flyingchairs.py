@@ -23,8 +23,8 @@ def make_dataset(dir, split=None):
 def flying_chairs(root, transform=None, target_transform=None,
                   co_transform=None, split=None):
     train_list, test_list = make_dataset(root,split)
-    #train_dataset = ListDataset(root, train_list, transform, target_transform, co_transform)
-    train_dataset = ListDataset(root, train_list, transform, target_transform)
+    train_dataset = ListDataset(root, train_list, transform, target_transform, co_transform)
+    #train_dataset = ListDataset(root, train_list, transform, target_transform)
     test_dataset = ListDataset(root, test_list, transform, target_transform)
 
     return train_dataset, test_dataset
