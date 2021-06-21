@@ -192,6 +192,7 @@ def main():
         
 
         # train for one epoch
+        
         train_loss, train_EPE = train(train_loader, model, optimizer, epoch, train_writer)
         train_writer.add_scalar('mean EPE', train_EPE, epoch)
         scheduler.step()
@@ -229,6 +230,10 @@ def train(train_loader, model, optimizer, epoch, train_writer):
     model.train()
 
     end = time.time()
+    #ekliyoryum
+    print(input.size())
+    print(target.size())
+    ##
 
     for i, (input, target) in enumerate(train_loader):
         # measure data loading time
