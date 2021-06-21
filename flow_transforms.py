@@ -217,7 +217,8 @@ class RandomTranslate(object):
             self.translation = translation
 
     def __call__(self, inputs,target):
-        h, w, _ = inputs[0].shape
+        h, w = inputs[0].shape
+        #h, w, _ = inputs[0].shape
         th, tw = self.translation
         tw = random.randint(-tw, tw)
         th = random.randint(-th, th)
