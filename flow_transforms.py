@@ -123,8 +123,8 @@ class RandomCrop(object):
             self.size = size
 
     def __call__(self, inputs,target):
-        #h, w, _ = inputs[0].shape
-        h, w = inputs[0].shape
+        h, w, _ = inputs[0].shape
+        #h, w = inputs[0].shape
         th, tw = self.size
         if w == tw and h == th:
             return inputs,target
@@ -219,8 +219,8 @@ class RandomTranslate(object):
             self.translation = translation
 
     def __call__(self, inputs,target):
-        h, w = inputs[0].shape
-        #h, w, _ = inputs[0].shape
+        #h, w = inputs[0].shape
+        h, w, _ = inputs[0].shape
         th, tw = self.translation
         tw = random.randint(-tw, tw)
         th = random.randint(-th, th)
