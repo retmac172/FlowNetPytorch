@@ -34,7 +34,8 @@ class ArrayToTensor(object):
 
     def __call__(self, array):
         assert(isinstance(array, np.ndarray))
-        array = np.transpose(array, (2, 0, 1))
+        #array = np.transpose(array, (2, 0, 1))
+        array = np.transpose(array, (0, 1))
         # handle numpy array
         tensor = torch.from_numpy(array)
         # put it from HWC to CHW format
