@@ -142,7 +142,7 @@ def main():
         args.data,
         transform=input_transform,
         target_transform=target_transform,
-        co_transform=co_transform,
+        #co_transform=co_transform,
         split=args.split_file if args.split_file else args.split_value
     )
     print('{} samples found, {} train samples and {} test samples '.format(len(test_set)+len(train_set),
